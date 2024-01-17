@@ -1,0 +1,46 @@
+<html>
+	<head>
+	<title>Idle</title>
+	<link rel="stylesheet" href="styles.css">
+	
+	<meta charset="UTF-8">
+	<meta name="keywords" content="HTML, JavaScript, Idle">
+	<meta name="description" content="Simple Idle Game">
+	<meta name="author" content="Bagszy">
+	<meta name="viewport" content="width=device-width, inital-scale=1.0">
+	</head>
+
+	<body>
+		<div id="plyBalanceUI" class="UI"></div>
+		<button onclick="btnClick()" style="background-color: white;">+1</button>
+		<div>Buy Basic Generator</div>
+		<button id="buyGenerator_1" class="gen UI" onclick="buyGen(this.id)" style="background-color: white;" >Buy ()</button>
+		<div>Buy Better Generator</div>
+		<button id="buyGenerator_2" class="gen UI" onclick="buyGen(this.id)" style="background-color: white;" >Buy ()</button>
+		
+
+
+		<script src="javascript.js"></script>
+	</body>
+</html>
+
+<!-- Upgrade System
+	#1 - Boxes with a div that resize the main div depending on how many ugprades there are
+	#2 - When hovering over an upgrade make a context box
+	#3 - When pressed, buy the upgrade, remove the box ( if you can buy it) mostly javascript
+-->
+
+<!-- Research System
+	#1 - When you have 10 generators you unlock research
+	#2 - Research Box pops up containing upgrades + button to press which starts countdown and then you gain +1 rsearch
+	#3 - Research points can be used to buy other upgrades, discover new generators etc.
+-->
+
+<!-- Evolution
+	TBD
+-->
+
+<!-- Generators
+	#1 - Basic => Better => Good => Advanced =>  Powerful
+	#2 - $10 	  $100		$500	$1000		 $5000
+-->
