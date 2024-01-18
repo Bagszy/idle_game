@@ -1,7 +1,7 @@
 const plyBalanceUI = document.getElementById("plyBalanceUI");
 const btnUI = document.getElementById("btnBGOne")
 
-var plyBalance = 1000;
+var plyBalance = 1000000;
 
 const boughtGens = new Map([
 	["Generator 1", 0],
@@ -18,21 +18,41 @@ genPrices = new Map([
 	["Generator 4", 1000],
 	["Generator 5", 5000]
 ]);
-
+/* Create UI elements on window load */
+window.onload = function generateUI(){
+	const text = "Amount: "
+	for (var x = 1; x < 6; x++){
+	const newNode = document.createTextNode(text);
+	if(!document.getElementById("g" + x + "inline").children[2]){
+			const element = document.getElementById("g" + x + "inline").children[1];
+			element.classList.add("inline");
+			element.setAttribute("id", "Gen" + x + "Amount")
+			element.replaceChild(newNode, element.childNodes[0]);
+		}
+	}
+}
 /* Update UI plyBalances every milisecond */
 setInterval(function checkVal(){
 	plyBalance = plyBalance;
 	plyBalanceUI.innerHTML = "Balance: " + plyBalance.toString();
-	buyGenerator_1.innerHTML = "Buy (" + genPrices.get("Generator 1") + ")"
-	buyGenerator_2.innerHTML = "Buy (" + genPrices.get("Generator 2") + ")"
+	let amount = document.getElementsByClassName("gen UI")
 
-
+	for(var x = 1; x <= amount.length; x++){
+		var buyGen = document.getElementById("buyGenerator_" + x);
+		buyGen.innerHTML = "Buy (" + genPrices.get("Generator " + x) + ")"
+		var text = document.getElementById("Gen" + x + "Amount");
+		text.innerHTML = "Amount: " + boughtGens.get("Generator " + x);
+	}
 }, 50);
 
-function updateUI(){
-	var updates = document.getElementsByClassName("gen UI");
-	console.log(updates)
-}
+setInterval(function updateUI(){
+	let amount = document.getElementsByClassName("gen UI")
+	for(x = 0; x < amount.length; x++){
+		var updates = document.getElementsByClassName("gen UI")[x].id;
+		id = updates.replace("_", " ");
+		genPrices.set(id, genPrices.get(id))
+	}
+}, 50);	
 
 genProd = new Map([
 	["Generator 1", 1],
@@ -77,3 +97,4 @@ function buyGen(id){
 	break;
 	}
 }
+

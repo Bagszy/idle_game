@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 	<title>Idle</title>
@@ -12,15 +13,58 @@
 
 	<body>
 		<div id="plyBalanceUI" class="UI"></div>
-		<button onclick="btnClick()" style="background-color: white;">+1</button>
-		<div>Buy Basic Generator</div>
-		<button id="buyGenerator_1" class="gen UI" onclick="buyGen(this.id)" style="background-color: white;" >Buy ()</button>
-		<div>Buy Better Generator</div>
-		<button id="buyGenerator_2" class="gen UI" onclick="buyGen(this.id)" style="background-color: white;" >Buy ()</button>
-		
+		<button onclick="btnClick()">+1</button>
+			<div id="container">
+				<div>
+					<div class="centre">Buy Basic Generator</div>
+					<div id="g1inline">
+						<button id="buyGenerator_1" class="gen UI" onclick="buyGen(this.id)">Buy ()</button>
+						<div id="g1">Amount: 0</div>
+					</div>
+				</div>
 
+				<div class="seperator"></div>
 
-		<script src="javascript.js"></script>
+				<div>
+					<div class="centre">Buy Better Generator</div>
+					<div id="g2inline">
+						<button id="buyGenerator_2" class="gen UI" onclick="buyGen(this.id)">Buy ()</button>
+						<div id="g2">Amount: 0</div>
+					</div>
+				</div>
+
+				<div class="seperator"></div>
+
+				<div>
+					<div class="centre">Buy Good Generator</div>
+					<div id="g3inline">
+						<button id="buyGenerator_3" class="gen UI" onclick="buyGen(this.id)">Buy ()</button>
+						<div id="g3">Amount: 0</div>
+					</div>
+				</div>
+
+				<div class="seperator"></div>
+
+				<div>
+					<div class="centre">Buy Advanced Generator</div>
+					<div id="g4inline">
+						<button id="buyGenerator_4" class="gen UI" onclick="buyGen(this.id)">Buy ()</button>
+						<div id="g4">Amount: 0</div>
+					</div>
+				</div>
+
+				<div class="seperator"></div>
+
+				<div>
+					<div class="centre">Buy Powerful Generator</div>
+					<div id="g5inline">
+						<button id="buyGenerator_5" class="gen UI" onclick="buyGen(this.id)">Buy ()</button>
+						<div id="g5">Amount: 0</div>
+					</div>
+				</div>
+				
+			</div>
+	<script src="javascript.js"></script>
 	</body>
 </html>
 
